@@ -10,7 +10,7 @@ public class MessageServer {
 	}
 	
 	public void run() throws Exception {
-		ServerSocket ss = new ServerSocket(1234);
+		ServerSocket ss = new ServerSocket(6000);
 		Socket s = ss.accept();
 		
 		InputStreamReader isr = new InputStreamReader(s.getInputStream());

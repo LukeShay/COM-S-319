@@ -12,7 +12,7 @@ public class MessageClient {
 	
 	public void run() throws Exception {
 		Scanner scan = new Scanner(System.in);
-		Socket s = new Socket("localhost", 1234);
+		Socket s = new Socket("localhost", 6000);
 		PrintStream ps = new PrintStream(s.getOutputStream());
 		
 		ps.println(scan.nextLine());
