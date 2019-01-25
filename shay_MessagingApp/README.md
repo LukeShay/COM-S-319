@@ -1,0 +1,1 @@
+To compile and run my text application, you first have to compile all three classes, Server.java, ClientThread.java, and Client.java. Then to run it, you must first run Server.class. You can then run the Client.class as many times as you want.
