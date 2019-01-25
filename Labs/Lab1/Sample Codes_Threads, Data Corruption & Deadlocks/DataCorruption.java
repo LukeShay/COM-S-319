@@ -35,15 +35,15 @@ public class DataCorruption {
 class Counter {
   private int c = 0;
 
-  public void increment() {
+  public synchronized void increment() {
   	    System.out.println("incrementing" + (c++));
   }
 
-  public void decrement() {
+  public synchronized void decrement() {
       c--;
   }
 
-  public int value() {
+  public synchronized int value() {
       return c;
   }
 
