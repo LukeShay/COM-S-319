@@ -20,15 +20,13 @@ public class ClientThread implements Runnable {
 	final DataOutputStream out;
 	Socket s;
 	boolean connected;
-	private int num;
 
-	public ClientThread(Socket s, DataInputStream in, DataOutputStream out, String name, int num) {
+	public ClientThread(Socket s, DataInputStream in, DataOutputStream out, String name) {
 		this.name = name;
 		this.out = out;
 		this.in = in;
 		this.s = s;
 		connected = true;
-		this.num = num;
 	}
 
 	public void run() {
@@ -72,6 +70,6 @@ public class ClientThread implements Runnable {
 	 */
 	private void send(String msg) throws IOException {
 		for (ClientThread ct : Server.ar)
-			if (this.num != ct.num) ct.out.writeUTF(msg);
+			if (this != ct) ct.out.writeUTF(msg);
 	}
 }
