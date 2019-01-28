@@ -1,5 +1,4 @@
 
-
 import java.net.*;
 import java.util.Scanner;
 import java.io.*;
@@ -32,7 +31,10 @@ public class Client {
 
 		// Gives instructions for the user.
 		System.out.print(
-				"To send a message, press enter. The message will be sent to all other users. When you are finished, type \"quit\" to leave.\n");
+				"To send a message, press enter. The message will be sent to all other users.\n"
+				+ "When you are finished, type \"quit\" to leave. If somebody sends a message "
+				+ "while you are typing, your message will continue even though it is not on "
+				+ "the same line. To get it on the same line press ctrl+r. \n");
 
 		// Initializes the thread that is used to send messages to the server.
 		sendMsg = new Thread(new Runnable() {
