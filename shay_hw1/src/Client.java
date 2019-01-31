@@ -1,5 +1,4 @@
 
-
 import java.net.*;
 import java.util.Scanner;
 import java.io.*;
@@ -27,12 +26,15 @@ public class Client {
 		out = new DataOutputStream(socket.getOutputStream());
 
 		// Asks user for name
-		System.out.print("Enter your Name: (After giving input “your name”, need to press Enter) ");
+		System.out.print("Enter your Name: (After typing your name, press enter) ");
 		out.writeUTF(input.nextLine());
 
 		// Gives instructions for the user.
 		System.out.print(
-				"To send a message, press enter. The message will be sent to all other users. When you are finished, type \"quit\" to leave.\n");
+				"\nTo send a message, press enter. The message will be sent to all other users.\n"
+				+ "When you are finished, type \"quit\" to leave. If somebody sends a message \n"
+				+ "while you are typing, your message will continue even though it is not on \n"
+				+ "the same line. To get it on the same line press ctrl+r. \n\n");
 
 		// Initializes the thread that is used to send messages to the server.
 		sendMsg = new Thread(new Runnable() {
