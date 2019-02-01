@@ -1,0 +1,56 @@
+<html>
+<title>Validation Form</title>
+
+<head>
+    <script src="./validation1.js"></script>
+</head>
+
+<body>
+
+    <h1>
+        Validation Form
+    </h1>
+
+    <form id="information" action="">
+        <fieldset>
+            <legend>Information</legend>
+            <p id="FirstName">
+                <label for="firstName">First Name</label>
+                <input id="firstName" name="firstName" type="text" />
+            </p>
+            <p id="LastName">
+                <label for="lastName">Last Name</label>
+                <input id="lastName " name="lastName" type="text" />
+            </p>
+            <p id="Gender">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="select">--select--</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </p>
+            <p id="State">
+                <label for="state">State</label>
+                <select id="state">
+                    <option value="select">--select--</option>
+                    <option value="california">California</option>
+                    <option value="florida">Florida</option>
+                    <option value="newYork">New York</option>
+                    <option value="texas">Texas</option>
+                    <option value="hawaii">Hawaii</option>
+                    <option value="washington">Washington</option>
+                    <option value="colorado">Colorado</option>
+                    <option value="Virginia">Virginia</option>
+                    <option value="Iowa">Iowa</option>
+                    <option value="Arizona">Arizona</option>
+                </select>
+            </p>
+            <input onclick="validate1()" type="button" id="submit" name="submit" value="Submit" />
+            <input onclick="location.reload()" type="button" value="Clear" />
+
+        </fieldset>
+    </form>
+</body>
+
+</html>
