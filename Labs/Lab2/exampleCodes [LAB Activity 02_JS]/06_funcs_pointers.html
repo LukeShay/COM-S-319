@@ -1,7 +1,8 @@
 <html>
+
 <head>
-<!--
-  THE PURPOSE OF THIS EXAMPLE IS TO SHOW HOW 
+    <!--
+  THE PURPOSE OF THIS EXAMPLE IS TO SHOW HOW
   FUNCTION NAMES ARE POINTERS TO THE FUNCTIONS
 
   ALSO, WE SHOW NAMED FUNCTION EXPRESSIONS.
@@ -9,44 +10,43 @@
 </head>
 
 <body>
-<h1>
-<script> 
+    <h1>
+        <script>
+            //CASE 1: function declarations
 
-//CASE 1: function declarations
+            function fact(n) {
+                if (n == 2) return 2;
+                else return n * fact(n - 1);
+            }
 
-function fact(n) {
-  if (n == 2) return 2;
-  else return n * fact(n-1);
-}
+            document.write(fact(4) + "<br>");
 
-document.write(fact(4) + "<br>");
+            let newFact = fact;
 
-let newFact = fact;
-
-// TODO: What do you expect will happen if you uncomment the next line.
-// Try it!
- document.write(newFact(4) + "<br>");
-
-
-// TODO: What do you expect will happen if you uncomment the next line.
-// Try it! Why does this happen?
-fact = null;
-document.write(newFact(4) + "<br>"); // line 34
-// 
+            // TODO: What do you expect will happen if you uncomment the next line.
+            // Try it!
+            document.write(newFact(4) + "<br>");
 
 
+            // TODO: What do you expect will happen if you uncomment the next line.
+            // Try it! Why does this happen?
+            fact = null;
+            document.write(newFact(4) + "<br>"); // line 34
+            //
 
-// CASE 2: Named function expressions
-// This will always work -- use a NAMED function expression
-let factorial = function f(n) {
-  if (n == 2) return 2;
-  else return n * f(n-1);
-};
-newFact = factorial;
-factorial = null;
 
-document.write(newFact(4) + "<br>"); // line 48
 
-</script>
+            // CASE 2: Named function expressions
+            // This will always work -- use a NAMED function expression
+            let factorial = function f(n) {
+                if (n == 2) return 2;
+                else return n * f(n - 1);
+            };
+            newFact = factorial;
+            factorial = null;
+
+            document.write(newFact(4) + "<br>"); // line 48
+        </script>
 </body>
+
 </html>

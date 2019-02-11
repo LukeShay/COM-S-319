@@ -1,6 +1,7 @@
 <html>
+
 <head>
-<!--
+    <!--
   THE PURPOSE IS TO SHOW FUNCTIONS AS FIRST CLASS OBJECTS
   Functions can be assigned to variables, used in expressions,
   passed as arguments, returned from functions
@@ -9,56 +10,59 @@
 </head>
 
 <body>
-<h1>
+    <h1>
 
 
 
-<script>
+        <script>
+            //
+            // FUNCTION IS ASSIGNED TO VARIABLE, PASSED AS ARGUMENT, RETURNED AS
+            // VALUE
+            //
+            var myFunc = function(anotherFunc, arg) {
+                var result = anotherFunc(arg); // it calls the  function passed as argument
+                return result;
+            }
 
-//
-// FUNCTION IS ASSIGNED TO VARIABLE, PASSED AS ARGUMENT, RETURNED AS
-// VALUE
-//
-var myFunc = function (anotherFunc, arg) {
-  var result = anotherFunc(arg); // it calls the  function passed as argument
-  return result;
-}
+            // TODO: IF YOU UNCOMMENT THE BELOW LINES, WHAT WILL IT PRINT?
+            // TRY IT!
+            // myFunc(alert, "hello"); // myFunc calls alert internally!
 
-// TODO: IF YOU UNCOMMENT THE BELOW LINES, WHAT WILL IT PRINT?
-// TRY IT!
-// myFunc(alert, "hello"); // myFunc calls alert internally!
+            function doOps(operation) { // doOps returns a function!
+                if (operation == "add")
+                    return function(arg1, arg2) {
+                        return arg1 + arg2;
+                    }
+            }
 
-function doOps (operation) { // doOps returns a function!
-  if (operation == "add")
-    return function (arg1, arg2) { return arg1 + arg2; }
-}
-
-var someOp = myFunc(doOps, "add");
-// TODO: IF YOU UNCOMMENT THE BELOW LINES, WHAT WILL IT PRINT?
-// TRY IT!
-//alert(someOp(100, 11));
+            var someOp = myFunc(doOps, "add");
+            // TODO: IF YOU UNCOMMENT THE BELOW LINES, WHAT WILL IT PRINT?
+            // TRY IT!
+            alert(someOp(100, 11));
 
 
 
-//
-// NOTICE HOW FUNCTION INC IS DECLARED INSIDE THE ANONYMOUS FUNCTION
-//
-var x = function (num) {
+            //
+            // NOTICE HOW FUNCTION INC IS DECLARED INSIDE THE ANONYMOUS FUNCTION
+            //
+            var x = function(num) {
 
-   var i = num;
+                var i = num;
 
-   function inc() { i++; };
-   inc();
-   inc();
-   inc();
-   return i;
-};
+                function inc() {
+                    i++;
+                };
+                inc();
+                inc();
+                inc();
+                return i;
+            };
 
-// TODO: IF YOU UNCOMMENT THE BELOW LINES, WHAT WILL IT PRINT?
-// TRY IT!
-document.write(x(10) + "<br>");
-document.write(x(20) + "<br>");
-
-</script>
+            // TODO: IF YOU UNCOMMENT THE BELOW LINES, WHAT WILL IT PRINT?
+            // TRY IT!
+            document.write(x(10) + "<br>");
+            document.write(x(20) + "<br>");
+        </script>
 </body>
+
 </html>
