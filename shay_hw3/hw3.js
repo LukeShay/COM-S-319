@@ -13,8 +13,8 @@ console.log(num3, "reversed:", reverse(num3));
 console.log(num4, "is a palindrome:", isPalindrome(num4));
 
 function factorial(n) {
-    var result = n;
-    for (var i = n - 1; i > 0; i--)
+    var result = 1;
+    for (var i = n[0]; i > 0; i--)
         result *= i;
 
     return result;

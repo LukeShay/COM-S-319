@@ -1,0 +1,1 @@
+To run the snake program, just launch the snake.html file. To run hw3.js, in the command line type 'node hw3.js'.

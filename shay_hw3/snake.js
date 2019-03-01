@@ -16,7 +16,7 @@ function start() {
         canvasWidth = canvas.width;
         canvasHeight = canvas.height;
 
-        var gameloop = setInterval(paint, 300);
+        var gameloop = setInterval(paint, 1000);
         started = true;
     }
 }
